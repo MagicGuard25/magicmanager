@@ -1,1 +1,245 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.8,maximum-scale=1,user-scalable=yes"><link rel="icon" href="favicon.ico"><title>vue3</title><link href="static/css/chunk-0055b44c.21487736.css" rel="prefetch"><link href="static/css/chunk-05ced2b6.51ecfa54.css" rel="prefetch"><link href="static/css/chunk-0f2f6562.705598bb.css" rel="prefetch"><link href="static/css/chunk-167f3c4a.04fae4e0.css" rel="prefetch"><link href="static/css/chunk-1682dbfb.0db397ed.css" rel="prefetch"><link href="static/css/chunk-1d9c69e9.8fd92fd3.css" rel="prefetch"><link href="static/css/chunk-1efbe539.f1e15f0e.css" rel="prefetch"><link href="static/css/chunk-217e6b0e.38db49c2.css" rel="prefetch"><link href="static/css/chunk-222740a4.5ba9a02b.css" rel="prefetch"><link href="static/css/chunk-2c40b49f.fba93741.css" rel="prefetch"><link href="static/css/chunk-2f3d88e6.a2b5c8c6.css" rel="prefetch"><link href="static/css/chunk-34c36486.133179c1.css" rel="prefetch"><link href="static/css/chunk-3b27636c.1136acfb.css" rel="prefetch"><link href="static/css/chunk-4a5a07c8.2a689c44.css" rel="prefetch"><link href="static/css/chunk-4e76db38.cb52d8cd.css" rel="prefetch"><link href="static/css/chunk-535829b1.fa4d35c8.css" rel="prefetch"><link href="static/css/chunk-5f596b9f.0a6d58a2.css" rel="prefetch"><link href="static/css/chunk-6145034f.9b2fecdb.css" rel="prefetch"><link href="static/css/chunk-6e03aeea.e3506b8c.css" rel="prefetch"><link href="static/css/chunk-702529ba.01451e33.css" rel="prefetch"><link href="static/css/chunk-93f545ba.a2b5c8c6.css" rel="prefetch"><link href="static/css/chunk-c578b46c.f5be6180.css" rel="prefetch"><link href="static/js/chunk-0055b44c.0c5597f7.js" rel="prefetch"><link href="static/js/chunk-05ced2b6.9c8c35e0.js" rel="prefetch"><link href="static/js/chunk-0f2f6562.17743765.js" rel="prefetch"><link href="static/js/chunk-167f3c4a.1de55efc.js" rel="prefetch"><link href="static/js/chunk-1682dbfb.d65da009.js" rel="prefetch"><link href="static/js/chunk-1d9c69e9.889b1413.js" rel="prefetch"><link href="static/js/chunk-1efbe539.d202215c.js" rel="prefetch"><link href="static/js/chunk-217e6b0e.75be1011.js" rel="prefetch"><link href="static/js/chunk-222740a4.20a41627.js" rel="prefetch"><link href="static/js/chunk-2c40b49f.218f3ec8.js" rel="prefetch"><link href="static/js/chunk-2f3d88e6.d5dca195.js" rel="prefetch"><link href="static/js/chunk-34c36486.10d2eec5.js" rel="prefetch"><link href="static/js/chunk-3b27636c.ab2fd9f0.js" rel="prefetch"><link href="static/js/chunk-4a5a07c8.c569e591.js" rel="prefetch"><link href="static/js/chunk-4e76db38.3038aefb.js" rel="prefetch"><link href="static/js/chunk-535829b1.899cc226.js" rel="prefetch"><link href="static/js/chunk-5f596b9f.f55098de.js" rel="prefetch"><link href="static/js/chunk-6145034f.1b1abae3.js" rel="prefetch"><link href="static/js/chunk-6e03aeea.403a1d49.js" rel="prefetch"><link href="static/js/chunk-702529ba.c155d8aa.js" rel="prefetch"><link href="static/js/chunk-93f545ba.18bd472d.js" rel="prefetch"><link href="static/js/chunk-c578b46c.7a72d777.js" rel="prefetch"><link href="static/css/app.c76f227c.css" rel="preload" as="style"><link href="static/css/chunk-vendors.34a2368a.css" rel="preload" as="style"><link href="static/js/app.5d08ca38.js" rel="preload" as="script"><link href="static/js/chunk-vendors.8a5ad980.js" rel="preload" as="script"><link href="static/css/chunk-vendors.34a2368a.css" rel="stylesheet"><link href="static/css/app.c76f227c.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but vue3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="static/js/chunk-vendors.8a5ad980.js"></script><script src="static/js/app.5d08ca38.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.8,maximum-scale=1,user-scalable=yes">
+    <link rel="icon" href="favicon.ico">
+    <title>vue3</title>
+
+    <!-- קבצי CSS -->
+    <link href="static/css/chunk-vendors.34a2368a.css" rel="stylesheet">
+    <link href="static/css/app.c76f227c.css" rel="stylesheet">
+
+    <style>
+        #toggleMenu {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 16px;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        #languageMenu {
+            position: fixed;
+            top: 110px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1000;
+        }
+
+        #languageMenu.show {
+            display: flex;
+        }
+
+        .langButton {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #f0f0f0;
+            color: #000;
+            transition: all 0.3s;
+        }
+
+        .langButton:hover {
+            background: #d3d3d3;
+            color: black;
+        }
+
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+            z-index: 1002;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <strong>We're sorry but vue3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <button id="toggleMenu">EN</button>
+    <div id="languageMenu">
+        <button class="langButton" data-lang="en">English</button>
+        <button class="langButton" data-lang="he">עברית</button>
+        <button class="langButton" data-lang="ru">Русский</button>
+        <button class="langButton" data-lang="it">Italiano</button>
+        <button class="langButton" data-lang="es">Español</button>
+        <button class="langButton" data-lang="pt">Português</button>
+    </div>
+    <div class="loading" id="loadingIndicator">Translating...</div>
+    <div id="app"></div>
+
+    <script src="static/js/chunk-vendors.8a5ad980.js"></script>
+    <script src="static/js/app.5d08ca38.js"></script>
+    <script>
+        const apiKey = 'AIzaSyBgtTvTZgIW691ftk9HI2-VHOPckM8NyPY';
+        let currentLanguage = 'en';
+        let isDragging = false;
+        let dragThreshold = 10;
+        let startX, startY;
+
+        async function translateText(text, targetLang) {
+            if (!text.trim()) return text;
+            try {
+                const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        q: text,
+                        source: 'en',
+                        target: targetLang,
+                        format: 'text'
+                    })
+                });
+                if (!response.ok) throw new Error('Translation failed');
+                const result = await response.json();
+                return result.data.translations[0].translatedText;
+            } catch (error) {
+                console.error('Error during translation:', error);
+                return text;
+            }
+        }
+
+        async function translateElement(element, targetLang) {
+            const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+            let node;
+            while ((node = walker.nextNode())) {
+                const text = node.textContent.trim();
+                if (text) {
+                    node.textContent = await translateText(text, targetLang);
+                }
+            }
+        }
+
+        async function translatePage(lang) {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            loadingIndicator.style.display = 'block';
+            const app = document.getElementById('app');
+            if (app) await translateElement(app, lang);
+            loadingIndicator.style.display = 'none';
+        }
+
+        function setupLanguageMenu() {
+            document.querySelectorAll('.langButton').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const lang = button.dataset.lang;
+                    currentLanguage = lang;
+                    document.getElementById('toggleMenu').textContent = lang.toUpperCase();
+                    toggleLanguageMenu();
+                    await translatePage(lang);
+                });
+            });
+        }
+
+        function observeDomChanges() {
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(async mutation => {
+                    mutation.addedNodes.forEach(async node => {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            await translateElement(node, currentLanguage);
+                        }
+                    });
+                });
+            });
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        function toggleLanguageMenu() {
+            if (!isDragging) {
+                const menu = document.getElementById('languageMenu');
+                menu.classList.toggle('show');
+            }
+        }
+
+        function makeButtonDraggable() {
+            const button = document.getElementById('toggleMenu');
+            let offsetX, offsetY;
+
+            const startDrag = (e) => {
+                const touch = e.touches ? e.touches[0] : e;
+                startX = touch.clientX;
+                startY = touch.clientY;
+                isDragging = false;
+
+                offsetX = touch.clientX - button.getBoundingClientRect().left;
+                offsetY = touch.clientY - button.getBoundingClientRect().top;
+                document.body.style.touchAction = 'none';
+
+                button.addEventListener('mousemove', drag);
+                button.addEventListener('mouseup', endDrag);
+                button.addEventListener('touchmove', drag, { passive: false });
+                button.addEventListener('touchend', endDrag);
+            };
+
+            const drag = (e) => {
+                e.preventDefault();
+                const touch = e.touches ? e.touches[0] : e;
+                const dx = Math.abs(touch.clientX - startX);
+                const dy = Math.abs(touch.clientY - startY);
+                if (dx > dragThreshold || dy > dragThreshold) {
+                    isDragging = true;
+                }
+                if (!isDragging) return;
+
+                button.style.left = `${touch.clientX - offsetX}px`;
+                button.style.top = `${touch.clientY - offsetY}px`;
+            };
+
+            const endDrag = () => {
+                document.body.style.touchAction = '';
+                button.removeEventListener('mousemove', drag);
+                button.removeEventListener('mouseup', endDrag);
+                button.removeEventListener('touchmove', drag);
+                button.removeEventListener('touchend', endDrag);
+            };
+
+            button.addEventListener('mousedown', startDrag);
+            button.addEventListener('touchstart', startDrag);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupLanguageMenu();
+            observeDomChanges();
+            document.getElementById('toggleMenu').addEventListener('click', toggleLanguageMenu);
+            makeButtonDraggable();
+            translatePage(currentLanguage);
+        });
+    </script>
+</body>
+
+</html>
