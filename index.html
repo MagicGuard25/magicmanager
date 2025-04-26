@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.8,maximum-scale=1,user-scalable=yes">
+  <link rel="icon" href="favicon.ico">
   <title>vue3</title>
+
+  <!-- סטייל לפופאפ בלבד -->
   <style>
-    /* עיצוב הפופאפ */
     #popup {
       position: fixed;
       top: 0;
@@ -18,7 +21,7 @@
       justify-content: center;
       z-index: 9999;
     }
-    #popup-content {
+    #popup .popup-content {
       background: #fff;
       padding: 20px 30px;
       border-radius: 12px;
@@ -27,12 +30,12 @@
       font-family: Arial, sans-serif;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
-    #popup-content p {
+    #popup .popup-content p {
       margin-bottom: 20px;
       font-size: 16px;
       color: #333;
     }
-    #popup-content button {
+    #popup .popup-content button {
       background-color: #4285f4;
       color: white;
       border: none;
@@ -41,33 +44,47 @@
       font-size: 16px;
       cursor: pointer;
     }
-    #popup-content button:hover {
+    #popup .popup-content button:hover {
       background-color: #3367d6;
     }
   </style>
+
+  <!-- קבצי CSS של האפליקציה שלך -->
+  <link href="static/css/chunk-vendors.34a2368a.css" rel="stylesheet">
+  <link href="static/css/app.ea87bfb7.css" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- הפופאפ המעוצב -->
 <div id="popup">
-  <div id="popup-content">
+  <div class="popup-content">
     <p>Please open this page in Google Chrome and use the browser's built-in translation feature to translate it.<br><br>
     If translation does not start automatically, click on the three dots (menu) ➔ 'Translate'.</p>
     <button onclick="closePopup()">OK</button>
   </div>
 </div>
 
+<!-- אפליקציית Vue שלך -->
 <div id="app"></div>
 
+<!-- קבצי JS של האפליקציה -->
+<script src="static/js/chunk-vendors.8a5ad980.js"></script>
+<script src="static/js/app.57424878.js"></script>
+
+<!-- סקריפט לניהול הפופאפ -->
 <script>
   function closePopup() {
     document.getElementById('popup').style.display = 'none';
   }
-</script>
 
-<!-- הקבצים שלך -->
-<script src="static/js/chunk-vendors.8a5ad980.js"></script>
-<script src="static/js/app.57424878.js"></script>
+  // סגירה אוטומטית אחרי 5 שניות
+  window.onload = function() {
+    setTimeout(function() {
+      closePopup();
+    }, 5000);
+  };
+</script>
 
 </body>
 </html>
