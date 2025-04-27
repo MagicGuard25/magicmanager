@@ -5,56 +5,161 @@
 <!-- כפתור חזרה לעמוד הבית - סגנון -->
 <style>
   .home-button-container {
-    text-align: center;
-    margin: 15px auto;
-    width: 100%;
     position: fixed;
     bottom: 20px;
-    left: 0;
-    right: 0;
+    right: 20px;
     z-index: 1000;
+    touch-action: none; /* חשוב למובייל */
   }
   
   .home-button {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
     background-color: #0088ff;
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
+    border-radius: 50%;
+    font-size: 24px;
     text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: move;
   }
   
   .home-button:hover {
     background-color: #0066cc;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  .home-icon {
-    font-size: 18px;
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-  
-  .home-text {
-    vertical-align: middle;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   }
 </style>
 <link href="static/css/chunk-05ced2b6.51ecfa54.css" rel="prefetch"><link href="static/css/chunk-06ccb7e7.dbeca97e.css" rel="prefetch"><link href="static/css/chunk-1682dbfb.0db397ed.css" rel="prefetch"><link href="static/css/chunk-1d9c69e9.8fd92fd3.css" rel="prefetch"><link href="static/css/chunk-1efbe539.f1e15f0e.css" rel="prefetch"><link href="static/css/chunk-217e6b0e.38db49c2.css" rel="prefetch"><link href="static/css/chunk-222740a4.5ba9a02b.css" rel="prefetch"><link href="static/css/chunk-23f453cb.04fae4e0.css" rel="prefetch"><link href="static/css/chunk-2c40b49f.fba93741.css" rel="prefetch"><link href="static/css/chunk-2f3d88e6.a2b5c8c6.css" rel="prefetch"><link href="static/css/chunk-34c36486.133179c1.css" rel="prefetch"><link href="static/css/chunk-3b27636c.1136acfb.css" rel="prefetch"><link href="static/css/chunk-3f5f5117.fa4d35c8.css" rel="prefetch"><link href="static/css/chunk-437aa2e0.705598bb.css" rel="prefetch"><link href="static/css/chunk-4e76db38.cb52d8cd.css" rel="prefetch"><link href="static/css/chunk-51b9b8a8.21487736.css" rel="prefetch"><link href="static/css/chunk-6145034f.9b2fecdb.css" rel="prefetch"><link href="static/css/chunk-62ddc490.6245548c.css" rel="prefetch"><link href="static/css/chunk-6e03aeea.e3506b8c.css" rel="prefetch"><link href="static/css/chunk-702529ba.01451e33.css" rel="prefetch"><link href="static/css/chunk-93f545ba.a2b5c8c6.css" rel="prefetch"><link href="static/css/chunk-c578b46c.f5be6180.css" rel="prefetch"><link href="static/js/chunk-05ced2b6.9c8c35e0.js" rel="prefetch"><link href="static/js/chunk-06ccb7e7.3522736a.js" rel="prefetch"><link href="static/js/chunk-1682dbfb.d65da009.js" rel="prefetch"><link href="static/js/chunk-1d9c69e9.889b1413.js" rel="prefetch"><link href="static/js/chunk-1efbe539.d202215c.js" rel="prefetch"><link href="static/js/chunk-217e6b0e.75be1011.js" rel="prefetch"><link href="static/js/chunk-222740a4.20a41627.js" rel="prefetch"><link href="static/js/chunk-23f453cb.4401c459.js" rel="prefetch"><link href="static/js/chunk-2c40b49f.218f3ec8.js" rel="prefetch"><link href="static/js/chunk-2f3d88e6.d5dca195.js" rel="prefetch"><link href="static/js/chunk-34c36486.10d2eec5.js" rel="prefetch"><link href="static/js/chunk-3b27636c.ab2fd9f0.js" rel="prefetch"><link href="static/js/chunk-3f5f5117.537d9c5e.js" rel="prefetch"><link href="static/js/chunk-437aa2e0.451b31ba.js" rel="prefetch"><link href="static/js/chunk-4e76db38.3038aefb.js" rel="prefetch"><link href="static/js/chunk-51b9b8a8.cc13671e.js" rel="prefetch"><link href="static/js/chunk-6145034f.1b1abae3.js" rel="prefetch"><link href="static/js/chunk-62ddc490.0c3d900a.js" rel="prefetch"><link href="static/js/chunk-6e03aeea.403a1d49.js" rel="prefetch"><link href="static/js/chunk-702529ba.c155d8aa.js" rel="prefetch"><link href="static/js/chunk-93f545ba.18bd472d.js" rel="prefetch"><link href="static/js/chunk-c578b46c.7a72d777.js" rel="prefetch"><link href="static/css/app.ea87bfb7.css" rel="preload" as="style"><link href="static/css/chunk-vendors.34a2368a.css" rel="preload" as="style"><link href="static/js/app.57424878.js" rel="preload" as="script"><link href="static/js/chunk-vendors.8a5ad980.js" rel="preload" as="script"><link href="static/css/chunk-vendors.34a2368a.css" rel="stylesheet"><link href="static/css/app.ea87bfb7.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but vue3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div>
 
 <!-- כפתור חזרה לעמוד הבית -->
 <div class="home-button-container">
-  <a href="https://translate.magickguard.com/" class="home-button">
-    <span class="home-icon">🏠</span>
-    <span class="home-text">דף הבית</span>
+  <a href="https://translate.magickguard.com/" class="home-button" id="draggableButton">
+    <span>🏠</span>
   </a>
-</div><script src="static/js/chunk-vendors.8a5ad980.js"></script><script src="static/js/app.57424878.js"></script>
+</div>
+
+<!-- סקריפט להזזת הכפתור -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('draggableButton');
+    const container = button.parentElement;
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    // שמירת מיקום הכפתור בלוקל סטורג'
+    const savedPosition = localStorage.getItem('homeButtonPosition');
+    if (savedPosition) {
+      const position = JSON.parse(savedPosition);
+      xOffset = position.x;
+      yOffset = position.y;
+      setTranslate(xOffset, yOffset, container);
+    }
+
+    // פונקציות למגע
+    function dragStart(e) {
+      if (e.type === "touchstart") {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+      } else {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+      }
+
+      if (e.target === button) {
+        isDragging = true;
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+      isDragging = false;
+      
+      // שמירת המיקום החדש
+      localStorage.setItem('homeButtonPosition', JSON.stringify({
+        x: xOffset,
+        y: yOffset
+      }));
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault();
+        
+        if (e.type === "touchmove") {
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+        } else {
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+        
+        setTranslate(currentX, currentY, container);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
+
+    // אירועי מגע
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    // אירועי עכבר
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
+    
+    // מניעת ניווט בלחיצה על הכפתור בזמן גרירה
+    let startTime;
+    button.addEventListener("mousedown", function(e) {
+      startTime = new Date().getTime();
+    });
+    
+    button.addEventListener("mouseup", function(e) {
+      const endTime = new Date().getTime();
+      const timeDiff = endTime - startTime;
+      
+      // אם הלחיצה הייתה קצרה מ-200 מילישניות, זה נחשב לחיצה ולא גרירה
+      if (timeDiff < 200 && Math.abs(xOffset - initialX) < 5 && Math.abs(yOffset - initialY) < 5) {
+        window.location.href = button.getAttribute('href');
+      }
+    });
+    
+    // מניעת ניווט בלחיצה על הכפתור בזמן גרירה במובייל
+    button.addEventListener("touchstart", function(e) {
+      startTime = new Date().getTime();
+    });
+    
+    button.addEventListener("touchend", function(e) {
+      const endTime = new Date().getTime();
+      const timeDiff = endTime - startTime;
+      
+      // אם הלחיצה הייתה קצרה מ-200 מילישניות, זה נחשב לחיצה ולא גרירה
+      if (timeDiff < 200 && Math.abs(xOffset - initialX) < 5 && Math.abs(yOffset - initialY) < 5) {
+        window.location.href = button.getAttribute('href');
+      } else {
+        e.preventDefault(); // מניעת ניווט אם זו הייתה גרירה
+      }
+    });
+  });
+</script><script src="static/js/chunk-vendors.8a5ad980.js"></script><script src="static/js/app.57424878.js"></script>
 <!-- Added JavaScript to redirect from First Time Guide and enable Core buttons -->
 <script src="static/js/redirect-and-enable.js"></script>
 </body></html>
